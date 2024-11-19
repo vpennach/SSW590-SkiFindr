@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from "./components/Navbar";
-import HomePage from "./pages/HomePage";
+import Navbar from "./components/Navbar.js";
+import HomePage from "./pages/HomePage.js";
 import { Route, Routes, Navigate } from "react-router-dom";
-import AboutPage from './pages/AboutPage';
-import FindPage from './pages/FindPage';
+import AboutPage from './pages/AboutPage.js';
+import FindPage from './pages/FindPage.js';
 import './App.css';
 
 function App() {

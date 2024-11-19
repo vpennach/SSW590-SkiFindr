@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import configRoutesFunction from '../server/routes.js';
-
 
 export default function FindPage() {
   const [resortCount, setResortCount] = useState(0);
