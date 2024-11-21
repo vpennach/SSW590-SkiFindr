@@ -1,3 +1,11 @@
+# Mongo Data Construction
+
+In order for this app to work as intended you must run the insert-data.js file in order for your mongodb to have the resort data
+
+To do this you must first create a database named **'SkiFinder'** with a collection name **'ski'** and this must be on **localhost:27017** for the insert-data.js file to run correctly.
+
+After doing so you should see the resort data from resorts.csv in your MongoDB
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
