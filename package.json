@@ -9,6 +9,7 @@
     "axios": "^1.7.7",
     "cors": "^2.8.5",
     "csv-parser": "^3.0.0",
+    "firebase": "^11.0.2",
     "mongodb": "^6.10.0",
     "mongoose": "^8.8.1",
     "react": "^18.3.1",
@@ -17,7 +18,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-    "type": "module",  
+  "type": "module",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
