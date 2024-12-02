@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { calculateHaversineDistance } from '../components/distanceUtils.js';
+import '../styles/FindPage.css';
 
 export default function FindPage() {
   const [location, setLocation] = useState('');
@@ -78,30 +79,44 @@ export default function FindPage() {
   };
 
   return (
-    <div>
-      <h1>Find Ski Resorts</h1>
-      <input
-        type="text"
-        placeholder="Enter location (e.g., Brooklyn, NY)"
-        value={location}
-        onChange={(e) => setLocation(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Enter maximum distance (miles)"
-        value={maxDistance}
-        onChange={(e) => setMaxDistance(e.target.value)}
-      />
-      <button onClick={handleFindResorts}>Find Resorts</button>
+    <div className="find-page">
+      <div className="prompt-container">
+        <h1 className="find-page-title">Find Your Next Ski Resort</h1>
+        <p className="find-page-subtitle">
+          Enter a location and a maximum distance to find ski resorts near you.
+        </p>
+        <div className="input-container">
+          <input
+            type="text"
+            placeholder="Enter location (e.g., Brooklyn, NY)"
+            className="input-field"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+          <input
+            type="number"
+            placeholder="Enter maximum distance (miles)"
+            className="input-field"
+            value={maxDistance}
+            onChange={(e) => setMaxDistance(e.target.value)}
+          />
+          <button className="find-button" onClick={handleFindResorts}>
+            Find Resorts
+          </button>
+        </div>
+      </div>
 
-      {filteredResorts.length > 0 && (
-        <table border="1" style={{ width: '100%', textAlign: 'left', borderCollapse: 'collapse' }}>
+      {filteredResorts.length > 0 ? (
+        <table className="resort-table">
           <thead>
             <tr>
               <th>#</th>
               <th>Resort Name</th>
-              <th>Country</th>
               <th>Distance (miles)</th>
+              <th>Country</th>
+              <th>Price ($)</th>
+              <th>Highest Point</th>
+              <th>Total Slopes</th>
             </tr>
           </thead>
           <tbody>
@@ -109,15 +124,23 @@ export default function FindPage() {
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{resort.Resort}</td>
-                <td>{resort.Country}</td>
                 <td>{resort.distance.toFixed(2)}</td>
+                <td>{resort.Country}</td>
+                <td>{resort.Price}</td>
+                <td>{resort["Highest point"]}</td>
+                <td>{resort["Total slopes"]}</td>
               </tr>
             ))}
           </tbody>
         </table>
+      ) : (
+        <p className="no-results-message">
+          No ski resorts found within the specified distance. Try a different location or increase the maximum distance.
+        </p>
       )}
     </div>
   );
+
 }
 
 

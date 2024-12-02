@@ -31,7 +31,7 @@ def geocode():
     if coords:
         return jsonify(coords)
     else:
-        return jsonify({'error': 'Unable to geocode location'}), 404
+        return jsonify({'error': 'Unable to find location'}), 404
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
