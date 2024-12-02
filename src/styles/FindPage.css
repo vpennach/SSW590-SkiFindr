@@ -1,0 +1,104 @@
+/* FindPage.css */
+
+.find-page {
+    background-color: #e9e7db;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
+
+  .prompt-container {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .find-page-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+
+  .find-page-subtitle {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 20px;
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .input-field {
+    width: 300px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .input-field:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.8);
+    border-color: #2c3454;
+  }
+
+  .find-button {
+    background-color: #2c3454;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .find-button:hover {
+    background-color: #4a5379;
+  }
+
+  .resort-table {
+    margin-top: 20px;
+    width: 80%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .resort-table th, .resort-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .resort-table th {
+    background-color: #2c3454;
+    color: white;
+  }
+
+  .resort-table tr:nth-child(odd) {
+    background-color: white;
+  }
+
+  .resort-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .no-results-message {
+    font-size: 1.2rem;
+    color: #2c3454;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+  }
+
