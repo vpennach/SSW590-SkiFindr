@@ -9,6 +9,7 @@
     "axios": "^1.7.7",
     "cors": "^2.8.5",
     "csv-parser": "^3.0.0",
+    "firebase": "^11.0.2",
     "flask": "^0.2.10",
     "flask-cors": "^0.0.1",
     "mongodb": "^6.10.0",
