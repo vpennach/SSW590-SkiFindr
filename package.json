@@ -22,7 +22,9 @@
   },
   "type": "module",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm run start-frontend\" \"npm run start-backend\" \"python backend/app.py\"",
+    "start-frontend": "react-scripts start",
+    "start-backend": "node ./server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -45,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
   }
 }
