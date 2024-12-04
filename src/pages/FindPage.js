@@ -8,6 +8,7 @@ export default function FindPage() {
   const [coordinates, setCoordinates] = useState(null);
   const [resorts, setResorts] = useState([]);
   const [filteredResorts, setFilteredResorts] = useState([]);
+  const [locationError, setLocationError] = useState('');
 
   // Fetch all resorts when the component loads
   useEffect(() => {
@@ -78,6 +79,21 @@ export default function FindPage() {
     }
   };
 
+  //SEC: ensures the user only inputs letters, commas, and spaces to the input
+
+  const handleLocationInput = (e) => {
+    const value = e.target.value;
+    // Allow only letters, spaces, and commas
+    const isValid = /^[a-zA-Z\s,]*$/.test(value);
+
+    if (isValid) {
+      setLocation(value);
+      setLocationError(''); // Clear error if input is valid
+    } else {
+      setLocationError('Location can only contain letters, spaces, and commas.');
+    }
+  };
+
   return (
     <div className="find-page">
       <div className="prompt-container">
@@ -91,8 +107,9 @@ export default function FindPage() {
             placeholder="Enter location (e.g., Brooklyn, NY)"
             className="input-field"
             value={location}
-            onChange={(e) => setLocation(e.target.value)}
+            onChange={handleLocationInput}
           />
+          {locationError && <p className="error-message">{locationError}</p>}
           <input
             type="number"
             placeholder="Enter maximum distance (miles)"
