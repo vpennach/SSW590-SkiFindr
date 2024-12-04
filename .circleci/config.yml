@@ -2,8 +2,8 @@ version: 2.1
 
 jobs:
   build:
-    executor:
-      name: circleci/node:current
+    docker:
+      - image: cimg/node:20.0
     steps:
       - checkout
       - run:
@@ -18,4 +18,5 @@ workflows:
   build_and_test:
     jobs:
       - build
+
 
