@@ -1,0 +1,20 @@
+.homepage-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.homepage-container h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.homepage-container p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+.homepage-container button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
