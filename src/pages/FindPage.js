@@ -33,6 +33,13 @@ export default function FindPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ location }),
       });
+
+      if (response.status === 429) {
+        // Handle rate limit error
+        setLocationError('You have exceeded the request limit. Please try again later.');
+        return null;
+      }
+
       const data = await response.json();
 
       if (data.error) {

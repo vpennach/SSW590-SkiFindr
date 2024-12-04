@@ -1,9 +1,18 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS  # Import CORS
 from geopy.geocoders import Nominatim
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
+
+# Add rate limiting
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["100 per minute"],
+)
 
 # Function to geocode a location using geopy
 def geocode_location(location):
@@ -21,6 +30,7 @@ def geocode_location(location):
 
 # API endpoint to get coordinates
 @app.route('/api/geocode', methods=['POST'])
+@limiter.limit("100 per minute")
 def geocode():
     data = request.json
     location = data.get('location')
