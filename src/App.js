@@ -31,9 +31,11 @@ function App() {
         <Route path="/account" element={<PrivateRoute />}>
           <Route path="/account" element={<Account />} />
         </Route>
-        <Route path="/find" element={<PrivateRoute />}>
-          <Route path="/find" element={<FindPage />} />
-        </Route>
+
+        {/* Public Route for FindPage */}
+        <Route path="/find" element={<FindPage />} />
+
+        {/* Protected Routes */}
         <Route path="/about" element={<PrivateRoute />}>
           <Route path="/about" element={<AboutPage />} />
         </Route>
