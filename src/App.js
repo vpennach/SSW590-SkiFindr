@@ -1,7 +1,6 @@
 import React from 'react';
 import Navigation from "./components/Navbar.js";
 import HomePage from "./pages/HomePage.js";
-import { Route, Routes, Navigate } from "react-router-dom";
 import AboutPage from './pages/AboutPage.js';
 import FindPage from './pages/FindPage.js';
 import SignIn from './login/SignIn.js';
@@ -11,6 +10,7 @@ import './App.css';
 import firebaseConfig from './firebase/FirebaseConfig.js';
 import { AuthProvider } from './components/AuthContext.js';
 import PrivateRoute from './components/PrivateRoute.js';
+import { Route, Routes, Navigate } from "react-router-dom";
 import { initializeApp } from 'firebase/app';
 
 // Initialize Firebase
@@ -32,15 +32,11 @@ function App() {
           <Route path="/account" element={<Account />} />
         </Route>
 
-        {/* Public Route for FindPage */}
-        <Route path="/find" element={<FindPage />} />
-
-        {/* Protected Routes */}
-        <Route path="/about" element={<PrivateRoute />}>
-          <Route path="/about" element={<AboutPage />} />
-        </Route>
-
         {/* Public Routes */}
+        <Route path="/find" element={<FindPage />} />
+        <Route path="/about" element={<AboutPage />} />
+
+        {/* Auth Routes */}
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
