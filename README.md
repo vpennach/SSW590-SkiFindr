@@ -1,3 +1,5 @@
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/vpennach/ssw590-skifindr/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/vpennach/ssw590-skifindr/tree/main)
+
 # Mongo Data Construction
 
 In order for this app to work as intended you must run the insert-data.js file in order for your mongodb to have the resort data
