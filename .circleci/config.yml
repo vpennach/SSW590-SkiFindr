@@ -2,10 +2,10 @@ version: 2.1
 
 jobs:
   build:
-    docker:
-      - image: circleci/node:20  
+    executor:
+      name: circleci/node:current
     steps:
-      - checkout  
+      - checkout
       - run:
           name: Install Dependencies
           command: npm install
@@ -18,3 +18,4 @@ workflows:
   build_and_test:
     jobs:
       - build
+
