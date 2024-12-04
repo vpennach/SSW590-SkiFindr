@@ -6,7 +6,7 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleNavigation = () => {
-    navigate('/findpage'); // Adjust this to the correct route for your FindPage
+    navigate('/find'); // Corrected route
   };
 
   return (
