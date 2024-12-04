@@ -9,6 +9,9 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
+      - run:
+          name: Start application
+          command: npm start
 
 workflows:
   version: 2
